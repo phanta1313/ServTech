@@ -1,64 +1,77 @@
-
-
 function categoryBtn1(){
-   if (document.getElementById('category1').style.display == 'block'){
-    document.getElementById('category1').style.display = 'none'
-    }
-    else{
-        document.getElementById('category1').style.display = 'block'
-    }
+    let category1 = document.getElementById('category1');
+    let filter1 = document.getElementById('filter1');
 
-    document.getElementById('filter1').style.display = 'none'
+    let category1_result = (category1.style.display == 'block') ? category1.style.display = 'none' :
+    category1.style.display = 'block';
+
+    category1 = category1_result
+    
+    filter1.style.display = 'none'
+   
+    alert(x)
 }
 
 function categoryBtn2(){
-    if (document.getElementById('category2').style.display == 'block'){
-        document.getElementById('category2').style.display = 'none'
-    }
-    else{
-        document.getElementById('category2').style.display = 'block'
-    }
+    let category2 = document.getElementById('category2') 
+    let filter2 = document.getElementById('filter2')
 
-    document.getElementById('filter2').style.display = 'none'
+    let category2_result = (category2.style.display == 'block') ? category2.style.display = 'none' :
+    category2.style.display = 'block';
+
+    category2 = category2_result
+    
+    filter2.style.display = 'none'
 }
 
 
 function categoryBtn3(){
-    if (document.getElementById('category3').style.display == 'block'){
-        document.getElementById('category3').style.display = 'none'
-    }
-    else{
-        document.getElementById('category3').style.display = 'block'
-    }
+    let category3 = document.getElementById('category3') 
+    let filter3 = document.getElementById('filter3')
 
-    document.getElementById('filter3').style.display = 'none'
+    let category3_result = (category3.style.display == 'block') ? category3.style.display = 'none' : 
+    category3.style.display = 'block';
+
+    category3 = category3_result
+    
+    filter3.style.display = 'none'
 }
 
 function filter1(){
-    if(document.getElementById('filter1').style.display == 'block') {
-        document.getElementById('filter1').style.display = 'none'
-    }
-    else{
-        document.getElementById('filter1').style.display = 'block'
-    }
+    let filter1 = document.getElementById('filter1') 
+
+    let filter1_result = (filter1.style.display == 'block') ? filter1.style.display = 'none' : 
+    filter1.style.display = 'block';
+
+    filter1 = filter1_result
 }
 
 function filter2(){
-    if(document.getElementById('filter2').style.display == 'block') {
-        document.getElementById('filter2').style.display = 'none'
-    }
-    else{
-        document.getElementById('filter2').style.display = 'block'
-    }
+    let filter2 = document.getElementById('filter2') 
+
+    let filter2_result = (filter2.style.display == 'block') ? filter2.style.display = 'none' : 
+    filter2.style.display = 'block';
+
+    filter2 = filter2_result
 }
 
 function filter3(){
-    if(document.getElementById('filter3').style.display == 'block') {
-        document.getElementById('filter3').style.display = 'none'
-    }
-    else{
-        document.getElementById('filter3').style.display = 'block'
-    }
+    let filter3 = document.getElementById('filter3') 
+
+    let filter3_result = (filter3.style.display == 'block') ? filter3.style.display = 'none' : 
+    filter3.style.display = 'block';
+
+    filter3 = filter3_result
 }
+
+function openBasket(){
+    let basket_win = document.getElementById('basket-win')
+
+    basket_win_result = (basket_win.style.display == 'block') ? basket_win.style.display = 'none' : 
+    basket_win.style.display = 'block';
+
+    basket_win - basket_win_result
+}
+
 
 
