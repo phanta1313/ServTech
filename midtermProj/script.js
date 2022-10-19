@@ -8,8 +8,6 @@ function categoryBtn1(){
     category1 = category1_result
     
     filter1.style.display = 'none'
-   
-    alert(x)
 }
 
 function categoryBtn2(){
@@ -73,18 +71,20 @@ function openBasket(){
 
     basket_win = basket_win_result
 
-    all_except_basket.style.opacity = '0'
+    all_except_basket.style.display = 'none'
 
 }
 
 function goBack(){
     document.getElementById('basket-win').style.display = 'none';
-    document.querySelector('main').style.opacity = '1'
+    document.querySelector('main').style.display = 'block'
 }
 
-function putInBasket(){
+category1 = {
     
 }
+
+
 
 
 

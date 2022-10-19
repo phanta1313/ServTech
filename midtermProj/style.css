@@ -64,9 +64,11 @@
 .good {
    display: flex;
    justify-content: center;
+   align-items: end;
    height: 100px;
    width: 120px;
    border: 1px solid black;
+   background-color: aliceblue;
 }
 
 
