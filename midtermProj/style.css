@@ -40,14 +40,12 @@
 }
 
 .category{
-    display: none;
     padding-bottom:20px;
     text-align: center;
 }
 
 
 .filter {
-    display: none;
     padding-bottom: 20px;
 
 }
@@ -70,5 +68,7 @@
    border: 1px solid black;
    background-color: aliceblue;
 }
-
+.hide {
+    display: none;
+}
 
