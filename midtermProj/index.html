@@ -8,36 +8,38 @@
     <title>title</title>
 </head>
 <body>
+    <div class="basket">
+        <img src="./images/card.png" alt="a basket" width="80px" id="openbasket">
+    </div>
     <div id="basket-win">
-        <div id="basket-div-content">
-            <h1>Your choosen goods: </h1>
-            <button onclick="goBack()">go back</button>
+        <div id="basket-div">
+            <div id="basket-content">
+                <h1>Your choosen goods: </h1>
+                <hr>
+            </div>
         </div>
     </div>
     <main>
     <div class="header">
             <h1>Welcome to the shop</h1>
             <h3>choose some goods and put them in a basket</h3>
-        <div class="basket">
-            <a onclick="openBasket()"><img src="./images/card.png" alt="a basket" width="80px"></a>
-        </div>
     </div>
-   
     <div class="category-btn-div">
-        <button class="open-category-btn" id="open-category-button1" onclick="categoryBtn1()">category1</button>
+        <button class="open-category-btn" id="open-category-button1">category1</button>
+        
     </div>
-        <div class="category hide" id="category1">
+    
+        <div class="category" id="category1">
             <div id="filter-btn-div">
-                <button class="filter-button" id="filter-button1" onclick="filter1()">filter1</button>
+                <button class="filter-button" id="filter-button1">filter1</button>
             </div>
-            <div class="filter hide" id="filter1">
+            <div class="filter" id="filter1">
                 <label for="price">
                     <input type="range" min="0" max="100" name="price">
                 </label>
                 <div>
-                    <button>Show</button>
+                    <button id="show-btn">Show</button>
                 </div>
-     
             </div>
             <div class="good-div" id="good-div1">
                 <div class="good" id="good-div1-good1"><button>put in basket</button></div>
@@ -46,14 +48,19 @@
             </div>
         </div>
     <div class="category-btn-div">
-        <button class="open-category-btn" id="open-category-button2" onclick="categoryBtn2()">category2</button>
+        <button class="open-category-btn" id="open-category-button2">category2</button>
     </div>
-        <div class="category hide" id="category2">
+        <div class="category" id="category2">
             <div id="filter-btn-div">
-                <button class="filter-button" id="filter-button2" onclick="filter2()">filter2</button>
+                <button class="filter-button" id="filter-button2">filter2</button>
             </div>
-            <div class="filter hide" id="filter2">
-   
+            <div class="filter" id="filter2">
+                <label for="price">
+                    <input type="range" min="0" max="100" name="price">
+                </label>
+                <div>
+                    <button id="show-btn">Show</button>
+                </div>
             </div>
             <div class="good-div" id="good-div2">
                 <div class="good" id="good-div2-good1"><button>put in basket</button></div>
@@ -62,14 +69,19 @@
             </div>
         </div>
     <div class="category-btn-div">
-        <button class="open-category-btn" id="open-category-button3" onclick="categoryBtn3()">category3</button>
+        <button class="open-category-btn" id="open-category-button3">category3</button>
     </div>
-        <div class="category hide" id="category3">
+        <div class="category" id="category3">
             <div id="filter-btn-div">
-                <button class="filter-button" id="filter-button3" onclick="filter3()">filter3</button>
+                <button class="filter-button" id="filter-button3">filter3</button>
             </div>
-            <div class="filter hide" id="filter3">
-         
+            <div class="filter" id="filter3">
+                <label for="price">
+                    <input type="range" min="0" max="100" name="price">
+                </label>
+                <div>
+                    <button id="show-btn">Show</button>
+                </div>
             </div>
             <div class="good-div" id="good-div3">
                 <div class="good" id="good-div3-good1"><button>put in basket</button></div>
@@ -78,7 +90,6 @@
             </div>
         </div>  
     </main>
-    
 </body>
 <script src="./script.js"></script>
 </html>

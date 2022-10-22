@@ -14,12 +14,13 @@
 
 #basket-win {
     display: none;
-    justify-content: center;
-    text-align: center;
     padding-bottom:20px ;
 }
 
-#basket-div-content {
+#basket-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
     width: 600px;
     height: 500px;
     border: 1px solid #888;
@@ -40,12 +41,14 @@
 }
 
 .category{
+    display: none;
     padding-bottom:20px;
     text-align: center;
 }
 
 
 .filter {
+    display: none;
     padding-bottom: 20px;
 
 }
@@ -68,7 +71,5 @@
    border: 1px solid black;
    background-color: aliceblue;
 }
-.hide {
-    display: none;
-}
+
 
