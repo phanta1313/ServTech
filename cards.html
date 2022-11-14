@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+</head>
+<style>
+body{
+   display: flex;
+
+}
+.cont{
+    padding: 20px;
+}
+img{
+    width: 100px;
+
+}
+.main {
+    padding: 10px;
+    background-color: rgb(107, 107, 107);
+    width: 200px;
+    height: 500px;
+    
+}
+.info{
+    text-align: center;
+}
+</style>
+<body>
+</body>
+<script>
+
+let newDeck  = fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
+.then(response => {return response.json()})
+.then(json => {
+    return fetch(`https://www.deckofcardsapi.com/api/deck/${json.deck_id}/draw/?count=5`);
+})
+.then(response => {return response.json()})
+.then(json => {json.cards.forEach(element => {
+    let item = document.createElement('div'); 
+        item.innerHTML = `
+        <div class='cont'>
+        <div class="main">
+        <div class="info">
+            <div>
+                <img src="${element.image}" alt="">
+            </div>
+            <h1>Info:</h1>
+            <h2>Code:</h2>
+            <p>${element.code}</p>
+            <h2>Value:</h2>
+            <p>${element.value}</p>
+            <h2>Suit:</h2>
+            <p>${element.suit}</p>
+        
+        </div>
+    </div>
+    </div>
+        `
+        document.querySelector('body').append(item);
+    });
+});
+
+
+
+
+
+
+</script>
+</html>
