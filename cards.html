@@ -8,40 +8,46 @@
 <style>
 body{
    display: flex;
+   justify-content: center;
+   align-items: center;
 
 }
 .cont{
-    padding: 20px;
+    padding: 50px;
 }
+.main{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(141, 136, 129);
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+}
+
 img{
     width: 100px;
 
 }
-.main {
-    padding: 10px;
-    background-color: rgb(107, 107, 107);
-    width: 200px;
-    height: 500px;
-    
-}
+
 .info{
     text-align: center;
 }
 </style>
 <body>
+    
 </body>
 <script>
 
 let newDeck  = fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
 .then(response => {return response.json()})
-.then(json => {
-    return fetch(`https://www.deckofcardsapi.com/api/deck/${json.deck_id}/draw/?count=5`);
-})
+.then(json => {return fetch(`https://www.deckofcardsapi.com/api/deck/${json.deck_id}/draw/?count=5`);})
 .then(response => {return response.json()})
 .then(json => {json.cards.forEach(element => {
     let item = document.createElement('div'); 
+    item.className = 'cont'
         item.innerHTML = `
-        <div class='cont'>
         <div class="main">
         <div class="info">
             <div>
@@ -57,16 +63,9 @@ let newDeck  = fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_
         
         </div>
     </div>
-    </div>
         `
         document.querySelector('body').append(item);
     });
 });
-
-
-
-
-
-
 </script>
 </html>
