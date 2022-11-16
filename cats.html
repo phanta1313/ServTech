@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asdds</title>
+</head>
+<style>
+    
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .main{
+        text-align: center;
+    }
+  .container{
+    text-align: center;
+  }
+</style>
+<body>
+   <div class="main">
+    <div class="container">
+        <h1>An interesting fact about cats:</h1>
+    </div>
+    <a href="index.html"><button>next fact</button></a>
+</div>
+   
+</body>
+<script>
+    let promise = fetch('https://catfact.ninja/fact')
+    .then(answer =>{return answer.json()})
+    .then(json=>{let fact = document.createElement('p')
+                 fact.className = 'fact-cat'
+                 fact.innerHTML = `<p>${json.fact}</p>`
+                 document.querySelector('.container').append(fact)
+})
+  
+    
+</script>
+</html>
