@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requests</title>
+</head>
+<style>
+    .modal {
+        height: 300px;
+        width: 500px;
+        border: 1px solid black;
+    }
+
+    img {
+      
+        height: 200px;
+    }
+    .goods{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .good{
+        text-align: center;
+        padding: 20px;
+        
+    }
+    .requests {
+        display: flex;
+        justify-content: center;
+
+    }
+    button{
+        padding: 20px;
+    }
+</style>
+<body>
+    <div class="modal" id="create">
+        <div class="modal-good">
+            <p>Name of the good: </p>
+            <input type="text" placeholder="Name of your good" id="name">
+            <p>Adress of image: </p>
+            <input type="text" placeholder="Adress of image" id="image">
+            <p>Price: </p>
+            <input type="text" placeholder="Price" id="price"> 
+            
+        </div>
+        <button>create</button>
+      </div>
+      <div>
+
+      <div class="modal" id="update">
+        <div class="modal-good">
+            <p>ID: </p>
+            <input type="text" placeholder="id"> 
+            
+      </div>
+      <button>update</button>
+    </div>
+    
+    <div class="modal" id="delete">
+        <div class="modal-good">
+            <p>ID: </p>
+            <input type="text" placeholder="id"> 
+            
+        </div>
+        <button>delete</button>
+    </div>
+    <div class="goods">
+       
+    </div>
+    <script>
+        fetch('https://637b0886702b9830b9f82fdc.mockapi.io/api/v1/shops')
+        .then(res => {return res.json()}).then(json => {
+           json.forEach(element => {
+            console.log(element)
+            let div = document.createElement('div')
+            div.innerHTML = `
+            <div class="good">
+                <p>Name: ${element.name}</p>
+                <img src="${element.image}" alt="">
+                <p>Price: ${element.price}</p>
+                <p>id: ${element.id}</p>
+            </div>
+            `
+            document.querySelector('.goods').append(div)
+           });
+        })
+        document.querySelector('#create button').addEventListener('click',()=>{
+            let name = document.querySelector('#name').value
+            let price = document.querySelector('#price').value
+            let image = document.querySelector('#image').value
+            fetch('https://637b0886702b9830b9f82fdc.mockapi.io/api/v1/shops',{
+                method:'POST',
+                headers:{ 'Content-Type': 'application/json;charset=utf-8'},
+                body: JSON.stringify({
+                    name: name,
+                    price: price,
+                    image: image
+                })
+            })
+     
+        })
+        document.querySelector('#delete button').addEventListener('click',()=>{
+            let id_del = document.querySelector('#delete input').value
+            fetch(`https://637b0886702b9830b9f82fdc.mockapi.io/api/v1/shops/${id_del}` ,{method:"DELETE"})
+        })
+
+        document.querySelector('#update button').addEventListener('click',()=>{
+            let id_up = document.querySelector('#update input').value
+            fetch(`https://637b0886702b9830b9f82fdc.mockapi.io/api/v1/shops/${id_up}`,{method:'PUT'})
+        })
+       
+    </script>
+</body>
+
+</html>
