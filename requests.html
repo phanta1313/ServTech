@@ -77,7 +77,7 @@
             console.log(element)
             let div = document.createElement('div')
             div.innerHTML = `
-            <div class="good">
+            <div class="good" id="id-${element.id}">
                 <p>Name: ${element.name}</p>
                 <img src="${element.image}" alt="">
                 <p>Price: ${element.price}</p>
@@ -105,6 +105,7 @@
         document.querySelector('#delete button').addEventListener('click',()=>{
             let id_del = document.querySelector('#delete input').value
             fetch(`https://637b0886702b9830b9f82fdc.mockapi.io/api/v1/shops/${id_del}` ,{method:"DELETE"})
+            document.getElementById(`id-${id_del}`).remove()
         })
 
         document.querySelector('#update button').addEventListener('click',()=>{
